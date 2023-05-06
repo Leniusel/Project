@@ -1,0 +1,77 @@
+The following document will give specifications on the function and development of the project Sketchroom.
+
+Group Member:
+Doris Tran
+
+Introduction:
+The goal of the game is to color the room the player finds themselves in. They player can color objects by hovering the brush over the object they want to color.
+It is recommended to play with a mouse and keyboard.
+Using the left mouse button, they can interact with the objects. The player can move the camera by moving their mouse.
+The player can leave the game by pressing the 'Esc' key.
+
+Assets Used:
+All models (Assets > Models) and animations (Assets > Animation) will be made by Doris Tran.
+
+Coding will be done via UPBGE logic bricks and nodes.
+
+The sound effects (Assets > Sound) used in the game are free online:
+*brush.mp3 [https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=36966]
+*menu.mp3 [https://pixabay.com/users/music_for_videos-26992513/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=145038]
+*open_door.mp3 [https://elements.envato.com/door-PU3YCUA?utm_source=mixkit&utm_medium=referral&utm_campaign=elements_mixkit_cs_sfx_tag&_ga=2.36765728.1081901177.1682494009-2145526037.1682494009]
+
+The following were not used in this version of the project, but I do want to use them later when I expand on game.
+*spawn.mp3 [https://pixabay.com/sound-effects/so-slimy-46602/] (For the black ink enemies, not in EXE file)
+*vanish.mp3 [https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=14728] (When you wack the ink with the paint brush, also not in EXE file)
+
+UI:
+I have two collections ready for the game. One is for the scene and the other is for the brush's HUD. Each collection has their own camera.
+The HUD's camera is a secondary camera I duplicated from my main camera in the 3D scene collection. I had the HUD camera set far away from
+the main camera. In front of the HUD camera, I set up where I want my brush object to be placed and tested if its animation can be seen within the frame of the camera.
+Text objects were also added to add information.
+Once everything was good, I moved over to the scene collection's main camera and use the logic nodes to add an overlay collection.
+
+Milestone Plan:
+1. April 8, 2023: (Done)
+Brainstorm a game and its core mechanics. Check if it's possible to finish with the time contraints. Have a milestone plan outlined. 
+    *3D Coloring Book
+    *2 camera (third person/HUD)
+    *Player moves via wasd (Removed. Player can only move the camera)
+    *Brush has collision with paint blocks and uncolored objects. (Removed. Using sensor to sense the hover motion to color instead)
+
+2. April 12, 2023: (Moved to UPBGE due to issues with animation/model imports on April 19)
+Build a coloring system in godot. 
+    *create scenetest1
+    *Primitive objects were used in testing color interactions.
+    *Add C++ script to move the main camera along with the brush object.
+    *Add second camera to act as the brush HUD. Brush movement is not accurate.
+
+3. April 16, 2023:
+Add on to Brush Overlay in godot.
+    *Add 5 different blocks to act as five different colors [red, blue, black, yellow, and green].
+    *Add a sphere to test color change via texture.
+    *Add interaction when brush hover over color blocks. (removed)
+
+4. April 18, 2023: 
+Models of paintbrush, chair, table, lamp, fan, room, and door with their interaction animation due. Export as FBX/gltf. (Done)
+    *Attempt to import objects to replace the primetive objects. Animations imported sucessfully. The objets, however, don't appear right. 
+
+5. April 22, 2023: (Add in switching to UPBGE)
+Integrate blender models into the game engine.
+    *Apply the scripts to the new objects. Brush is in the BrushOverlay with the BrushCam on it. The other objects are in the main camera. Add in text for instructions.
+    *Add text messages for player at start and finish.
+    *Paintbrush is still not acurate. Added an invisible hitbox for the door and frame to avoid the room's walls.
+    *Added a mouse cursor for player.
+    *Add timer to player can see the last message before the game close.
+    *(Add: Switching to UPBGE logic bricks)
+    *Removed scenetest1.
+    *Added actions in logic brick to play animation.
+
+6. April 28, 2023:
+Remove Unnessary Products
+*Paint wheel appears to crash UPBGE. Removed until problem is solved. Paint wheel will stay in the test build scenetest2.
+*Rebuild animation for brush, door, frame, knob, chair, lamp, and fan.
+*Added sound effects for brush and door.
+*Added background music
+
+7. May 4, 2023: 
+Export Game. (Done)
